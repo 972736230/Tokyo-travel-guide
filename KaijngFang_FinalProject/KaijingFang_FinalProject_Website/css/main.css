@@ -1,0 +1,2151 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:wght@100&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+  --ff--thin: 'Raleway', sans-serif;
+  --ff-primary: 'Lato', sans-serif;
+  /* dark shades of primary color*/
+  --clr-primary-1: #f5f3ff;
+  --clr-primary-2: #ede9fe;
+  --clr-primary-3: #ddd6fe;
+  --clr-primary-4: #c4b5fd;
+  /* primary/main color */
+  --clr-primary-5: #a78bfa;
+  /* lighter shades of primary color */
+  --clr-primary-6: #8b5cf6;
+  --clr-primary-7: #7c3aed;
+  --clr-primary-8: #5b21b6;
+  --clr-primary-9: #4c1d95;
+  --clr-primary-10: #4c1d95;
+  /* darkest grey - used for headings */
+  --clr-grey-1: #312e81;
+  --clr-grey-2: #4338ca;
+  --clr-grey-3: #3730a3;
+  --clr-grey-4: #581c87;
+  /* grey used for paragraphs */
+  --clr-grey-5: #d8b4fe;
+  --clr-grey-6: #c084fc;
+  --clr-grey-7: #f472b6;
+  --clr-grey-8: #f0abfc;
+  --clr-grey-9: #e9d5ff;
+  --clr-grey-10: #fae8ff;
+  --clr-white: #fff;
+  --ff-primary: 'Lato', sans-serif;
+
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: auto;
+  font-family: 'Caveat', cursive;
+  background: var(--clr-white);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* css start here */
+
+/*
+=============== 
+navbar
+===============
+*/
+/* navbar */
+header {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--clr-grey-6);
+  text-decoration: none;
+  z-index: 10;
+  word-spacing: 1.5px;
+  letter-spacing: 1.2px;
+}
+.navbar {
+  box-shadow: var(--dark-shadow);
+  z-index: 10;
+  width: 100vw;
+}
+.nav-center {
+  width: 100vw;
+  max-width: 1170px;
+  margin: 0 auto;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 10;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  z-index: 10;
+}
+.nav-logo {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  transition: 0.7s ease;
+  color: #1f1e1e;
+  transition: var(--transition);
+}
+
+.nav-logo:hover {
+  color: #6a6a6a;
+  transform: scale(1.1);
+}
+.nav-link {
+  transition: 0.7s ease;
+  text-transform: capitalize;
+  word-spacing: 1.5px;
+  color: #1f1e1e;
+  font-weight: bold;
+  z-index: 10;
+  transition: var(--transition);
+  font-size: 1.2rem;
+}
+.nav-link:hover {
+  color: #6a6a6a;
+}
+.nav-item {
+  transition: var(--transition);
+}
+.nav-item:hover {
+  transform: scale(1.2);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: #1f1e1e;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .navbar {
+    box-shadow: none;
+    z-index: 10;
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: var(--dark-shadow);
+    z-index: 10;
+  }
+  .nav-item {
+    margin: 16px 0;
+    z-index: 10;
+  }
+  .nav-menu.active {
+    left: 0;
+    z-index: 10;
+  }
+}
+/*
+=============== 
+section 1: home page
+===============
+*/
+.home-hero {
+  width: 100vw;
+  height: calc(100vh - 70px);
+}
+
+.video-container {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  position: relative;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5),
+    rgba(91, 91, 91, 0.4)
+  );
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -7;
+}
+.video-container .caption {
+  z-index: 6;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  padding: 10rem;
+}
+
+.video-container .caption p {
+  letter-spacing: 1px;
+  padding: 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  word-spacing: 0.5rem;
+}
+.video-container .caption h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Caveat', cursive;
+}
+/* for bigger screen */
+@media screen and (min-width: 768px) {
+  .video-container .caption p {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    padding: 0 auto auto 0;
+    word-spacing: 1rem;
+  }
+  .video-container .caption h1 {
+    font-size: 5rem;
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+  }
+}
+/*
+=============== 
+section 1.5 about us
+===============
+*/
+.section-about {
+  width: 100vw;
+  height: auto;
+}
+.section-about .container-about {
+  max-width: 1170px;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.section-about .container-about .title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-about .container-about .title h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #1f1e1e;
+}
+
+.section-about .container-about .title h1::after {
+  content: '';
+  height: 0.2rem;
+  width: 10rem;
+  background-color: #7c2d12;
+  border-radius: 1px;
+  display: block;
+  margin: auto;
+}
+
+.section-about .content {
+  float: left;
+  width: 55%;
+  margin-bottom: 5rem;
+}
+.section-about .img-section {
+  float: right;
+  width: 40%;
+}
+.section-about .img-section img {
+  width: 100%;
+  height: auto;
+}
+.section-about .content .article h3 {
+  color: #292524;
+  font-size: 1.3rem;
+}
+
+.section-about .content .article p {
+  margin-top: 2rem;
+  color: #57534e;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.section-about .container-about .social {
+  width: 100%;
+  clear: both;
+  margin-top: 1rem;
+  text-align: center;
+  display: inline-block;
+}
+.section-about .container-about .social i {
+  color: #7c2d12;
+  font-size: 1.8rem;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 0.5rem;
+  transition: var(--transition);
+}
+
+.section-about .container-about .social i:hover {
+  color: #1f1e1e;
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+  .section-about .container-about {
+    width: 80%;
+    display: block;
+    margin: auto;
+  }
+  .section-about .content {
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .section-about .img-section {
+    float: none;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .section-about .img-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+  .section-about .container-about .title h1 {
+    font-size: 2rem;
+  }
+
+  .section-about .container-about .social i {
+    margin-top: 1.2rem;
+  }
+}
+/*
+=============== 
+section destination
+===============
+*/
+.destination {
+  width: 100%;
+  height: auto;
+  background: #f1f1f1;
+  padding: 1rem;
+}
+.destination .hd {
+  padding-top: 4rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.destination .hd h3 {
+  font-size: 3rem;
+  color: #1f1e1e;
+  letter-spacing: 2px;
+  margin-top: 2rem;
+}
+.content-container {
+  max-width: 1170px;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+.picture-holder {
+  width: 90%;
+  background: white;
+  height: 25rem;
+  margin: 2rem 2rem;
+  float: left;
+}
+
+.picture-holder .img {
+  background: url(https://img.freepik.com/free-vector/vintage-tokyo-map-elements_52683-45964.jpg?w=1380&t=st=1669930073~exp=1669930673~hmac=bcaf6bdbb459e2d82478ec66efeb04d2028e85e821cb20174025576a6c9eb02e)
+    center center / cover;
+  width: 100%;
+  height: 100%;
+  margin: auto auto;
+}
+
+@media (max-width: 768px) {
+  .picture-holder {
+    display: none;
+  }
+  .picture-holder .img {
+    display: none;
+  }
+}
+.r {
+  width: 100%;
+  padding: 2rem 2rem;
+}
+
+.r ul li {
+  padding: 1rem 1rem;
+  font-size: 1.65rem;
+  border-style: solid;
+  border-width: 0 0px 0.1rem 0;
+  border-color: gray;
+  position: relative;
+}
+
+.r ul li a {
+  color: grey;
+  padding: 0.2rem;
+}
+
+.r ul li:nth-child(1) ::before {
+  content: '1';
+  font-size: 3rem;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 60px;
+  text-align: center;
+  transform: translate(-80%, 10%);
+  color: black;
+  transition: var(--transition);
+}
+/* hover for 1 */
+.r ul li:nth-child(1) a:hover {
+  color: #1f1e1e;
+}
+
+.r ul li:nth-child(1) {
+  transition: var(--transition);
+}
+
+.r ul li:nth-child(1):hover {
+  transform: translate(-1.2rem, 0);
+  box-shadow: inset 0.4rem 0 0 #292524;
+}
+
+/* hover for 2 */
+.r ul li:nth-child(2) a:hover {
+  color: #1f1e1e;
+  font-weight: 2000;
+}
+
+.r ul li:nth-child(2) {
+  transition: var(--transition);
+}
+
+.r ul li:nth-child(2):hover {
+  transform: translate(-1.2rem, 0);
+  box-shadow: inset 0.4rem 0px 0 #292524;
+}
+/* hover for 3 */
+.r ul li:nth-child(3) a:hover {
+  color: #1f1e1e;
+}
+
+.r ul li:nth-child(3) {
+  transition: var(--transition);
+}
+
+.r ul li:nth-child(3):hover {
+  transform: translate(-1.2rem, 0);
+  box-shadow: inset 0.4rem 0 0 #292524;
+}
+
+/* hover for 4 */
+
+.r ul li:nth-child(4) a:hover {
+  color: #1f1e1e;
+}
+
+.r ul li:nth-child(4) {
+  transition: var(--transition);
+}
+
+.r ul li:nth-child(4):hover {
+  transform: translate(-1.2rem, 0);
+  box-shadow: inset 0.4rem 0 0 #292524;
+}
+/* end four hover */
+
+.r ul li:nth-child(2) ::before {
+  content: '2';
+  font-size: 3rem;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 60px;
+  text-align: center;
+  transform: translate(-80%, 0);
+  color: black;
+}
+
+.r ul li:nth-child(2) a:hover {
+  color: #1f1e1e;
+}
+
+.r ul li:nth-child(3) ::before {
+  content: '3';
+  font-size: 3rem;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 60px;
+  text-align: center;
+  transform: translate(-80%, 0);
+  color: #1f1e1e;
+}
+.r ul li:nth-child(4) ::before {
+  content: '4';
+  font-size: 3rem;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 60px;
+  text-align: center;
+  transform: translate(-80%, 0);
+  color: #1f1e1e;
+}
+
+/*
+=============== 
+section 2: Must see guide
+===============
+*/
+.section2 {
+  width: 100vw;
+  height: auto;
+}
+.section2-center {
+  padding-top: 5rem;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  background: url('https://img.freepik.com/free-vector/travel-stickers-badge-set_53876-100734.jpg?w=1060&t=st=1669595448~exp=1669596048~hmac=24bddb88b3df20d62c6a8de4b9b4f3d87c2f44296aeb2b7bd19c05d1fac1b2b8')
+    center/cover no-repeat;
+}
+
+.section2 .header {
+  max-width: 1170px;
+  height: 30rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section2 .text-center {
+  width: 90%;
+}
+.section2 .header h2 {
+  color: black;
+  font-size: 3.9rem;
+  padding-top: 3rem;
+  padding-left: 5rem;
+}
+.section2 .header .br-1 {
+  font-weight: bolder;
+}
+.section2 .header p {
+  color: black;
+  font-size: 1.9rem;
+  padding-left: 5rem;
+  width: 56%;
+  height: 40%;
+}
+
+@media screen and (max-width: 1200px) {
+  .section2 .header p {
+    display: none;
+  }
+}
+
+.season-boxes {
+  margin: 0 auto;
+  background: white;
+  width: 100vw;
+  height: auto;
+}
+.season-boxes .container {
+  width: 90%;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.container .card {
+  width: 300px;
+  margin: 1rem;
+  background: #fafaf9;
+  box-shadow: 0 2px 10px grey;
+  transition: var(--transition);
+}
+.container .card:hover {
+  transform: scale(1.1);
+}
+.container .card .card-img img {
+  width: 100%;
+}
+
+.card .card-body a {
+  color: black;
+  font-size: 2rem;
+  transition: var(--transition);
+}
+
+.card .card-body a:hover {
+  color: #1e3a8a;
+  font-size: 2rem;
+}
+.card .card-body p {
+  text-align: justify;
+  color: black;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.card .card-body {
+  padding: 0.75rem;
+}
+/*
+=============== 
+section 3: top5
+===============
+*/
+.section3 {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
+}
+
+.section3-center {
+  height: 100%;
+  width: 90%;
+  background: #f5f5f5;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 4;
+}
+
+.section3-center .center-text h1 {
+  color: black;
+  padding: 1rem 0 0 0;
+  font-size: 2rem;
+  font-family: 'Caveat', cursive;
+  text-transform: capitalize;
+}
+
+.table-responsive {
+  max-width: 100%;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: #ffffff33;
+  padding: 15px;
+  overflow: auto;
+  margin: 0.5rem auto;
+  border-radius: 0.4rem;
+  font-family: 'Caveat', cursive;
+  box-shadow: 2px 2px 16px rgb(164, 164, 164);
+}
+table {
+  width: 100%;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  color: #1f1e1e;
+  border-collapse: collapse;
+}
+
+table > thead {
+  background-color: #d6d3d1;
+  color: #292524;
+}
+table > thead th {
+  padding: 0.5rem;
+}
+table th,
+table td {
+  border: 1.3px solid #00000017;
+}
+table > tbody > tr > td > img {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 4px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px #0003;
+  padding: 2px 2px 2px 2px;
+  /* object-fit:cover; */
+}
+table > tbody > tr:nth-child(even) {
+  background: #fafaf9;
+}
+
+/*
+=============== 
+section plan your trip
+===============
+*/
+.plan {
+  background-color: #fafaf9;
+}
+.plan .center {
+  max-width: 1170px;
+  display: block;
+  width: 90%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+}
+.plan .center .hd {
+  padding: 8rem 0 5rem 0;
+  font-size: 2rem;
+  font-weight: 100;
+  color: black;
+  position: relative;
+  z-index: 1;
+}
+
+.plan .center .list {
+  margin-bottom: 2rem;
+  font-size: 2.1rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+.plan .center .list ul::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.plan .center .list ul li a {
+  display: block;
+  /* position:relative; */
+  z-index: 1;
+  border: 1px solid #dadada;
+  background: white;
+  color: #414141;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.plan .center .list ul li a .text {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  font-family: Neue, Helvetica, Arial, sans-serif, 'Microsoft YaHei',
+    'MicrosoftJhengHei';
+  font-size: 1.7rem;
+}
+
+.plan .center .list ul li a .text i {
+  padding: 0.5rem 0 1rem 0;
+  display: block;
+  font-size: 5rem;
+}
+
+@media (max-width: 768px) {
+  .plan .center .list ul li a .text i {
+    font-size: 2rem;
+  }
+  .plan .center .list ul li a .text {
+    font-size: 1rem;
+  }
+}
+
+.plan .center .list ul li {
+  float: left;
+  position: relative;
+  z-index: 1;
+  width: 33.333%;
+  display: list-item;
+  list-style: none;
+}
+.plan .center .list ul li a .text::after {
+  height: 4px;
+  width: 100%;
+  content: '';
+  display: block;
+  background: #a3a3a3;
+  position: absolute;
+  bottom: -10%;
+  margin-left: 0;
+  cursor: pointer;
+}
+.plan .center .list ul li a img {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  transition: var(--transition);
+  position: relative;
+  cursor: pointer;
+  z-index: 5;
+}
+.plan .center .list ul li a img:hover {
+  opacity: 100;
+  z-index: 1;
+  cursor: pointer;
+}
+.plan .center .list ul li a:hover {
+  color: white;
+  transform: translateY(-1rem);
+}
+
+/*
+=============== 
+CSS for Winter Guide
+===============
+*/
+/* accordion */
+.accordion {
+  margin:0.5rem 0;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+.panel {
+  padding: 0 0.3rem;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+/* end accordion */
+
+/* img */
+main .content #Caretta {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://jw-webmagazine.com/wp-content/uploads/2019/09/ogU.jpg)
+    no-repeat center center / cover;
+}
+main .content #Midtown {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2013/11/midtown-snow-globe_gdl.jpg)
+    no-repeat center center / cover;
+}
+main .content #Dome-City {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://a1.cdn.japantravel.com/photo/41390-179558/1440x960!/tokyo-tokyo-dome-city-winter-lights-179558.jpg)
+    no-repeat center center / cover;
+}
+
+/* end img */
+.container-winterguide .hero {
+  height: 35rem;
+  background: url(https://live.staticflickr.com/7403/16389642791_05fa45c310_b.jpg)
+    no-repeat center top / cover;
+}
+.container-winterguide main {
+  width: 80%;
+  max-width: 80rem;
+  background-color: white;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  margin-top: -12rem;
+}
+.container-winterguide main h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-top: 0;
+  color: #1f1e1e;
+}
+.container-winterguide main .profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.container-winterguide main .profile-container .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-winterguide main .profile-container .profile .img-container {
+  width: 6rem;
+  height: 6rem;
+  background: url(https://cdn-icons-png.flaticon.com/512/2762/2762836.png)
+    no-repeat center center / cover;
+  border-radius: 0.5rem;
+}
+.container-winterguide main .profile-container .profile .text {
+  margin: 0 1.5rem;
+  color: #5b5963;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.container-winterguide main .profile-container .profile .text h3 {
+  text-transform: uppercase;
+}
+main .content p {
+  color: #5b5963;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+.container-winterguide main .content h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #5b5963;
+  margin: 0.3rem 0;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+main .content .content-img-container {
+  margin: 2rem auto;
+  width: 100%;
+  height: 35rem;
+  background: url(https://images.pexels.com/photos/11499004/pexels-photo-11499004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.content blockquote {
+  color: #292524;
+  font-size: 1.4rem;
+  padding: 1rem 2.8rem;
+  line-height: 1.6;
+  font-weight: 300;
+  box-shadow: inset 0.5rem 0 0 #292524;
+  background-color: #f5f5f5;
+}
+.tags {
+  margin:0.5rem 0;
+  display: flex;
+  align-items: center;
+  color: #1f1e1e;
+}
+.tags p {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+.tags a {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #f5f5f5;
+  color: #5b5963;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0 0.7rem;
+  z-index: 0;
+}
+.articles {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin: 5rem 0;
+  padding: 5rem 0;
+}
+.articles .article-heading {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.articles .article-heading h5 {
+  font-size: 10rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  position: relative;
+  color: rgba(128, 128, 128, 0.162);
+}
+.articles .article-heading h6 {
+  font-family: var(--ff--thin);
+  color: #1f1e1e;
+  font-size: 4rem;
+  font-weight: 1500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+.season-cards {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem auto;
+  gap: 5rem;
+}
+.season-cards .season-card-containerz {
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.season-cards .season-card-container .img-holder {
+  max-width: 100%;
+  height: 18rem;
+  background: url(https://images.pexels.com/photos/1822605/pexels-photo-1822605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+  position: relative;
+  z-index: 0;
+}
+.season-cards .one .img-holder {
+  background: url(https://images.pexels.com/photos/161401/fushimi-inari-taisha-shrine-kyoto-japan-temple-161401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .two .img-holder {
+  background: url(https://images.pexels.com/photos/1654748/pexels-photo-1654748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .three .img-holder {
+  background: url(https://images.pexels.com/photos/1325837/pexels-photo-1325837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .season-card-container .img-holder a {
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.1rem 1rem;
+  display: inline-block;
+  color: black;
+  font-weight: 00;
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  transition: all 0.3s linear;
+  background: rgba(255, 255, 255, 0.858);
+}
+
+.season-cards .season-card-container {
+  transition: all 0.3s linear;
+  box-shadow: 5px 10px 10px grey;
+  margin-bottom: 2rem;
+}
+.season-cards .season-card-container:hover {
+  transform: translateY(-1rem);
+  box-shadow: 5px 10px 30px grey;
+}
+.season-cards .season-card-container a:hover {
+  background-color: white;
+}
+.season-cards .season-card-container .card-text {
+  background: #f5f5f5;
+  padding: 1.1rem;
+  box-shadow: 0 0 0.3rem grey;
+}
+.season-cards .season-card-container .card-text h4 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #292524;
+}
+.season-cards .season-card-container .card-text p {
+  font-size: 1rem;
+  color: #57534e;
+}
+.articles .winter-button {
+  margin: 0 auto;
+  text-align: center;
+  transition: var(--transition);
+}
+.articles .winter-button .btn {
+  background-color: grey;
+  color: white;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  font-weight: 200;
+  border-radius: 5px;
+  padding: 0.5rem 3rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+.articles .winter-button:hover {
+  transform: scale(1.2);
+}
+
+.articles .winter-button .btn:hover {
+  background: black;
+  color: white;
+}
+.season-footer {
+  background-color: #222;
+  padding: 3rem 0;
+}
+.season-footer .icons {
+  text-align: center;
+}
+.season-footer .icons i {
+  font-size: 2rem;
+  color: grey;
+  padding: 1rem;
+  transition: var(--transition);
+}
+.season-footer .icons i:hover {
+  color: white;
+  transform: translateY(-0.5rem) scale(1.2);
+  cursor: pointer;
+}
+.season-footer .icons .copyright p {
+  font-size: 1.2rem;
+  letter-spacing: 1xp;
+  color: white;
+  margin: 1rem 0;
+}
+/* end winter guide */
+
+/*
+=============== 
+CSS for Spring Guide
+===============
+*/
+.container-springguide .hero {
+  height: 35rem;
+  background: url(https://images.pexels.com/photos/356269/pexels-photo-356269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center top / cover;
+}
+.container-springguide main {
+  width: 80%;
+  max-width: 80rem;
+  background-color: white;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  margin-top: -12rem;
+}
+.container-springguide main h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-top: 0;
+  color: #1e1e1f;
+}
+.container-springguide main .profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.container-springguide main .profile-container .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-springguide main .profile-container .profile .img-container {
+  width: 6rem;
+  height: 6rem;
+  background: url('https://cdn-icons-png.flaticon.com/512/2118/2118508.png')
+    no-repeat center center / cover;
+  border-radius: 0.5rem;
+}
+.container-springguide main .profile-container .profile .text {
+  margin: 0 1.5rem;
+  color: #5b5963;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.container-springguide main .profile-container .profile .text h3 {
+  text-transform: uppercase;
+}
+main .content p {
+  color: #5b5963;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+.container-springguide main .content h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #313035;
+  margin: 0.5rem 0;
+}
+/* img */
+main .content #rikugien {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://www.japan-guide.com/g18/3026_01.jpg) no-repeat center
+    center / cover;
+}
+main .content #bokutei {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://bartman905.files.wordpress.com/2010/04/asakusa27.jpg)
+    no-repeat center center / cover;
+}
+main .content #chiyoda {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://img.cooljapan-videos.com/files/articles/jqbtnxwu/thumbnail/bd72adbdb8622a0ae76f0b94fcee5014.jpg.webp)
+    no-repeat center center / cover;
+}
+
+main .content #ueno {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2019/03/ueno-park-cherry-blossoms_gdl.jpg)
+    no-repeat center center / cover;
+}
+/* end img */
+.content blockquote {
+  color: #292524;
+  font-size: 1.4rem;
+  padding: 1rem 2.8rem;
+  line-height: 1.6;
+  font-weight: 300;
+  box-shadow: inset 0.5rem 0 0 #292524;
+  background-color: #f5f5f5;
+}
+.tags {
+  display: flex;
+  align-items: center;
+  color: #1f1e1e;
+}
+.tags p {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+.tags a {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #f5f5f5;
+  color: #5b5963;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0 0.7rem;
+  z-index: 0;
+}
+.articles {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin: 5rem 0;
+  padding: 5rem 0;
+}
+.articles .article-heading {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.articles .article-heading h5 {
+  font-size: 10rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  position: relative;
+  color: rgba(128, 128, 128, 0.162);
+}
+
+.articles .article-heading h6 {
+  font-family: var(--ff--thin);
+  color: #1f1e1e;
+  font-size: 4rem;
+  font-weight: 1500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+.season-cards {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem auto;
+  gap: 5rem;
+}
+.season-cards .season-card-containerz {
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.season-cards .season-card-container .img-holder {
+  max-width: 100%;
+  height: 18rem;
+  background: url(https://images.pexels.com/photos/1822605/pexels-photo-1822605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+  position: relative;
+  z-index: 0;
+}
+.season-cards .one .img-holder {
+  background: url(https://images.pexels.com/photos/161401/fushimi-inari-taisha-shrine-kyoto-japan-temple-161401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .two .img-holder {
+  background: url(https://images.pexels.com/photos/1654748/pexels-photo-1654748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .three .img-holder {
+  background: url(https://images.pexels.com/photos/1325837/pexels-photo-1325837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .season-card-container .img-holder a {
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.1rem 1rem;
+  display: inline-block;
+  color: black;
+  font-weight: 00;
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  transition: all 0.3s linear;
+  background: rgba(255, 255, 255, 0.858);
+}
+
+.season-cards .season-card-container {
+  transition: all 0.3s linear;
+  box-shadow: 5px 10px 10px grey;
+  margin-bottom: 2rem;
+}
+.season-cards .season-card-container:hover {
+  transform: translateY(-1rem);
+  box-shadow: 5px 10px 30px grey;
+}
+.season-cards .season-card-container a:hover {
+  background-color: white;
+}
+.season-cards .season-card-container .card-text {
+  background: #f5f5f5;
+  padding: 1.1rem;
+  box-shadow: 0 0 0.3rem grey;
+}
+.season-cards .season-card-container .card-text h4 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #292524;
+}
+.season-cards .season-card-container .card-text p {
+  font-size: 1rem;
+  color: #57534e;
+}
+.articles .spring-button {
+  margin: 0 auto;
+  text-align: center;
+  transition: var(--transition);
+}
+.articles .spring-button .btn {
+  background-color: grey;
+  color: white;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  font-weight: 200;
+  border-radius: 5px;
+  padding: 0.5rem 3rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+.articles .spring-button:hover {
+  transform: scale(1.2);
+}
+
+.articles .spring-button .btn:hover {
+  background: black;
+  color: white;
+}
+.season-footer {
+  background-color: #222;
+  padding: 3rem 0;
+}
+.season-footer .icons {
+  text-align: center;
+}
+.season-footer .icons i {
+  font-size: 2rem;
+  color: grey;
+  padding: 1rem;
+  transition: var(--transition);
+}
+.season-footer .icons i:hover {
+  color: white;
+  transform: translateY(-0.5rem) scale(1.2);
+  cursor: pointer;
+}
+.season-footer .icons .copyright p {
+  font-size: 1.2rem;
+  letter-spacing: 1xp;
+  color: white;
+  margin: 1rem 0;
+}
+/* end spring guide */
+
+/*
+=============== 
+CSS for Summer Guide
+===============
+*/
+/* img */
+main .content #bigone {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2013/07/sumidagawa-fireworks-skytree-iStock-497394068-1024x600.jpg)
+    no-repeat center center / cover;
+}
+main .content #Showa {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://askz.sakura.ne.jp/column/cm901/f/showa_kinen_park_fireworks_show/showa_kinen_park_fireworks_show_02.jpg)
+    no-repeat center center / cover;
+}
+main .content #float {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://www.gotokyo.org/en/story/guide/fireworks-guide/images/pixta_23238958_xl_tf6xnj.jpg)
+    no-repeat center center / cover;
+}
+
+/* end img */
+.container-summerguide .hero {
+  height: 35rem;
+  background: url(https://intojapan.co.uk/wp-content/uploads/2016/06/hanabi.jpg)
+    no-repeat center bottom / cover;
+}
+.container-summerguide main {
+  width: 80%;
+  max-width: 80rem;
+  background-color: white;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  margin-top: -12rem;
+}
+.container-summerguide main h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-top: 0;
+  color: #1f1e1e;
+}
+.container-summerguide main .profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.container-summerguide main .profile-container .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-summerguide main .profile-container .profile .img-container {
+  width: 6rem;
+  height: 6rem;
+  background: url('https://cdn-icons-png.flaticon.com/512/3371/3371918.png')
+    no-repeat center center / cover;
+  border-radius: 0.5rem;
+}
+.container-summerguide main .profile-container .profile .text {
+  margin: 0 1.5rem;
+  color: #5b5963;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.container-summerguide main .profile-container .profile .text h3 {
+  text-transform: uppercase;
+}
+main .content p {
+  color: #5b5963;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+.container-summerguide main .content h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #5b5963;
+  margin: 0.5rem 0;
+}
+main .content .content-img-container {
+  margin: 2rem auto;
+  width: 100%;
+  height: 35rem;
+  background: url(https://images.pexels.com/photos/5220043/pexels-photo-5220043.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.content blockquote {
+  color: #292524;
+  font-size: 1.4rem;
+  padding: 1rem 2.8rem;
+  line-height: 1.6;
+  font-weight: 300;
+  box-shadow: inset 0.5rem 0 0 #292524;
+  background-color: #f5f5f5;
+}
+.tags {
+  display: flex;
+  align-items: center;
+  color: #1f1e1e;
+}
+.tags p {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+.tags a {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #f5f5f5;
+  color: #5b5963;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0 0.7rem;
+  z-index: 0;
+}
+.articles {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin: 5rem 0;
+  padding: 5rem 0;
+}
+.articles .article-heading {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.articles .article-heading h5 {
+  font-size: 10rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  position: relative;
+  color: rgba(128, 128, 128, 0.162);
+}
+.articles .article-heading h6 {
+  font-family: var(--ff--thin);
+  color: #1f1e1e;
+  font-size: 4rem;
+  font-weight: 1500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+.season-cards {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem auto;
+  gap: 5rem;
+}
+.season-cards .season-card-containerz {
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.season-cards .season-card-container .img-holder {
+  max-width: 100%;
+  height: 18rem;
+  background: url(https://images.pexels.com/photos/1822605/pexels-photo-1822605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+  position: relative;
+  z-index: 0;
+}
+.season-cards .one .img-holder {
+  background: url(https://images.pexels.com/photos/161401/fushimi-inari-taisha-shrine-kyoto-japan-temple-161401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .two .img-holder {
+  background: url(https://images.pexels.com/photos/1654748/pexels-photo-1654748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .three .img-holder {
+  background: url(https://images.pexels.com/photos/1325837/pexels-photo-1325837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .season-card-container .img-holder a {
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.1rem 1rem;
+  display: inline-block;
+  color: black;
+  font-weight: 00;
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  transition: all 0.3s linear;
+  background: rgba(255, 255, 255, 0.858);
+}
+
+.season-cards .season-card-container {
+  transition: all 0.3s linear;
+  box-shadow: 5px 10px 10px grey;
+  margin-bottom: 2rem;
+}
+.season-cards .season-card-container:hover {
+  transform: translateY(-1rem);
+  box-shadow: 5px 10px 30px grey;
+}
+.season-cards .season-card-container a:hover {
+  background-color: white;
+}
+.season-cards .season-card-container .card-text {
+  background: #f5f5f5;
+  padding: 1.1rem;
+  box-shadow: 0 0 0.3rem grey;
+}
+.season-cards .season-card-container .card-text h4 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #292524;
+}
+.season-cards .season-card-container .card-text p {
+  font-size: 1rem;
+  color: #57534e;
+}
+.articles .summer-button {
+  margin: 0 auto;
+  text-align: center;
+  transition: var(--transition);
+}
+.articles .summer-button .btn {
+  background-color: grey;
+  color: white;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  font-weight: 200;
+  border-radius: 5px;
+  padding: 0.5rem 3rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+.articles .summer-button:hover {
+  transform: scale(1.2);
+}
+
+.articles .summer-button .btn:hover {
+  background: black;
+  color: white;
+}
+.season-footer {
+  background-color: #222;
+  padding: 3rem 0;
+}
+.season-footer .icons {
+  text-align: center;
+}
+.season-footer .icons i {
+  font-size: 2rem;
+  color: grey;
+  padding: 1rem;
+  transition: var(--transition);
+}
+.season-footer .icons i:hover {
+  color: white;
+  transform: translateY(-0.5rem) scale(1.2);
+  cursor: pointer;
+}
+.season-footer .icons .copyright p {
+  font-size: 1.2rem;
+  letter-spacing: 1xp;
+  color: white;
+  margin: 1rem 0;
+}
+/* end summer guide */
+/*
+
+/*
+=============== 
+CSS for autumn Guide
+===============
+*/
+/* img */
+main .content #Rikugien {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://jw-webmagazine.com/wp-content/uploads/2019/06/jw-5d14661d7b2036.33488569.jpeg)
+    no-repeat center center / cover;
+}
+main .content #Hama-rikyu {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://cdn.kyushuandtokyo.org/front_assets/images_other/spot/xsmall/aflo_RYBA005825.jpg)
+    no-repeat center center / cover;
+}
+main .content #Koishikawa {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://s3-ap-northeast-1.amazonaws.com/thegate/2020/07/27/18/52/24/koishikawa_korakuen_oigawa.jpg)
+    no-repeat center center / cover;
+}
+
+/* end img */
+.container-autumnguide .hero {
+  height: 35rem;
+  background: url(https://images.pexels.com/photos/3322914/pexels-photo-3322914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center top / cover;
+}
+.container-autumnguide main {
+  width: 80%;
+  max-width: 80rem;
+  background-color: white;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  margin-top: -12rem;
+}
+.container-autumnguide main h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-top: 0;
+  color: #1e1e1f;
+}
+.container-autumnguide main .profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.container-autumnguide main .profile-container .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-autumnguide main .profile-container .profile .img-container {
+  width: 6rem;
+  height: 6rem;
+  background: url('https://cdn-icons-png.flaticon.com/512/5078/5078196.png')
+    no-repeat center center / cover;
+  border-radius: 0.5rem;
+}
+.container-autumnguide main .profile-container .profile .text {
+  margin: 0 1.5rem;
+  color: #5b5963;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.container-autumnguide main .profile-container .profile .text h3 {
+  text-transform: uppercase;
+}
+main .content p {
+  color: #5b5963;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+.container-autumnguide main .content h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #5b5963;
+  margin: 1rem 0;
+}
+main .content .content-img-container {
+  margin: 2rem auto;
+  width: 100%;
+  height: 35rem;
+  background: url(https://images.pexels.com/photos/6249524/pexels-photo-6249524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.content blockquote {
+  color: #292524;
+  font-size: 1.4rem;
+  padding: 1rem 2.8rem;
+  line-height: 1.6;
+  font-weight: 300;
+  box-shadow: inset 0.5rem 0 0 #292524;
+  background-color: #f5f5f5;
+}
+.tags {
+  display: flex;
+  align-items: center;
+  color: #1f1e1e;
+}
+.tags p {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+.tags a {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #f5f5f5;
+  color: #5b5963;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0 0.7rem;
+  z-index: 0;
+}
+.articles {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin: 5rem 0;
+  padding: 5rem 0;
+}
+.articles .article-heading {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.articles .article-heading h5 {
+  font-size: 10rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  position: relative;
+  color: rgba(128, 128, 128, 0.162);
+}
+
+@media (max-width: 768px) {
+  .articles .article-heading h5 {
+    font-size: 5rem;
+  }
+}
+.articles .article-heading h6 {
+  font-family: var(--ff--thin);
+  color: #1f1e1e;
+  font-size: 4rem;
+  font-weight: 1500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+@media (max-width: 768px) {
+  .articles .article-heading h6 {
+    font-size: 2rem;
+  }
+}
+.season-cards {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem auto;
+  gap: 5rem;
+}
+.season-cards .season-card-containerz {
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.season-cards .season-card-container .img-holder {
+  max-width: 100%;
+  height: 18rem;
+  background: url(https://images.pexels.com/photos/1822605/pexels-photo-1822605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+  position: relative;
+  z-index: 0;
+}
+.season-cards .one .img-holder {
+  background: url(https://images.pexels.com/photos/161401/fushimi-inari-taisha-shrine-kyoto-japan-temple-161401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .two .img-holder {
+  background: url(https://images.pexels.com/photos/1654748/pexels-photo-1654748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .three .img-holder {
+  background: url(https://images.pexels.com/photos/1325837/pexels-photo-1325837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+.season-cards .season-card-container .img-holder a {
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.1rem 1rem;
+  display: inline-block;
+  color: black;
+  font-weight: 00;
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  transition: all 0.3s linear;
+  background: rgba(255, 255, 255, 0.858);
+}
+
+.season-cards .season-card-container {
+  transition: all 0.3s linear;
+  box-shadow: 5px 10px 10px grey;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .season-cards .one {
+    display: none;
+  }
+  .season-cards .two {
+    display: none;
+  }
+}
+
+@media (max-width: 968px) {
+  .season-cards .two {
+    display: none;
+  }
+}
+.season-cards .season-card-container:hover {
+  transform: translateY(-1rem);
+  box-shadow: 5px 10px 30px grey;
+}
+.season-cards .season-card-container a:hover {
+  background-color: white;
+}
+.season-cards .season-card-container .card-text {
+  background: #f5f5f5;
+  padding: 1.1rem;
+  box-shadow: 0 0 0.3rem grey;
+}
+.season-cards .season-card-container .card-text h4 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #292524;
+}
+.season-cards .season-card-container .card-text p {
+  font-size: 1rem;
+  color: #57534e;
+}
+
+@media (max-width: 968px) {
+  .season-cards .season-card-container .card-text p {
+    font-size: 0;
+  }
+}
+
+.articles .autumn-button {
+  margin: 0 auto;
+  text-align: center;
+  transition: var(--transition);
+}
+.articles .autumn-button .btn {
+  background-color: grey;
+  color: white;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  font-weight: 200;
+  border-radius: 5px;
+  padding: 0.5rem 3rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+.articles .autumn-button:hover {
+  transform: scale(1.2);
+}
+
+.articles .autumn-button .btn:hover {
+  background: black;
+  color: white;
+}
+.season-footer {
+  background-color: #222;
+  padding: 3rem 0;
+}
+.season-footer .icons {
+  text-align: center;
+}
+.season-footer .icons i {
+  font-size: 2rem;
+  color: grey;
+  padding: 1rem;
+  transition: var(--transition);
+}
+.season-footer .icons i:hover {
+  color: white;
+  transform: translateY(-0.5rem) scale(1.2);
+  cursor: pointer;
+}
+.season-footer .icons .copyright p {
+  font-size: 1.2rem;
+  letter-spacing: 1xp;
+  color: white;
+  margin: 1rem 0;
+}
+/* end autumn guide */
+/*
+
+/*
+=============== 
+top1 page
+===============
+*/
+/* content-img for all the top pages */
+/* top1 */
+#sake {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://previews.123rf.com/images/ladyann/ladyann1006/ladyann100600033/7148415-japanese-sake-rice-wine-barrels-with-decorative-writing-in-a-japanese-temple.jpg)
+    no-repeat center center / cover;
+}
+/* top2 */
+#shinjuku {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://www.japan-guide.com/g18/740/3034_001_03.jpg) no-repeat
+    center center / cover;
+}
+
+/* top3 */
+#map {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  height: 35rem;
+  background: url(https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/03/a0003135/img/en/a0003135_parts_5cd14d63b0191.jpg?20210129111620&q=80)
+    no-repeat center center / cover;
+}
+/* end img */
+
+.toppage .banner {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.toppage .banner img {
+  display: block;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -50%;
+  z-index: 1;
+  animation: volume 100s infinite both linear;
+}
+.toppage .banner .hd {
+  position: relative;
+  z-index: 3;
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+}
+.toppage .banner .hd h3 {
+  color: white;
+  font-size: 5em;
+  display: inline-block;
+  z-index: 1;
+  margin-block-start: 3em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+/* end banner */
+.toppage .content {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+/* content */
+
+/* img */
+.content-img-container {
+  margin: 2rem auto;
+  width: 100%;
+  height: 35rem;
+  background: url(https://images.pexels.com/photos/6249524/pexels-photo-6249524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center / cover;
+}
+
+/* p&hd */
+.toppage .content {
+  padding-top: 3rem;
+  max-width: 80%;
+}
+.toppage .content h2 {
+  margin: 0.7rem 0;
+  font-size: 1.5rem;
+  color: #1f1e1e;
+}
+.toppage .content p {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #4b5563;
+}
+
+/*
+=============== 
+top2 page
+===============
+*/
+.top2 .banner .hd h3 {
+  max-width: 80%;
+}
